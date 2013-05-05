@@ -11,6 +11,9 @@ module Spree
       def index
         @search = Spree::Inquiry.search params[:q]
         @collection = @search.result.order('spree_inquiries.created_at DESC').page params[:page]
+        @collection = @collection.each do |record|
+          record[:inquiry_type].downcase!
+        end
         respond_with @collection
       end
 
