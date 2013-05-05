@@ -11,7 +11,7 @@
 </p>
 <% end %>
 <p>
-  <strong><%= t(:type) %>:</strong> <%= @inquiry.inquiry_type %>
+  <strong><%= t(:type) %>:</strong> <%= @inquiry.inquiry_type.capitalize %>
 </p>
 <% unless @inquiry.order_no.blank? %>
 <p>
