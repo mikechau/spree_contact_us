@@ -11,8 +11,7 @@
 </p>
 <% end %>
 <p>
-  <strong><%= t(:type) %>:</strong> <%= @inquiry.inquiry_type.split(' ').map {|w| w.capitalize }.join(' ')
- %>
+  <strong><%= t(:type) %>:</strong> <%= @inquiry.inquiry_type.titleize %>
 </p>
 <% unless @inquiry.order_no.blank? %>
 <p>

@@ -7,7 +7,7 @@ module Spree::InquiriesHelper
     # end
 
     # Translate types, use string for missing translations
-    types.collect { |i| i.to_s.split(' ').map {|w| w.capitalize }.join(' ') }
+    types.collect { |i| i.to_s.titleize }
 
   end
 end
