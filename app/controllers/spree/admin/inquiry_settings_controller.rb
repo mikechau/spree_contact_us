@@ -7,7 +7,7 @@ module Spree
         params[:captcha][:use_captcha] = !params[:captcha][:use_captcha].blank?
         Spree::ContactUsConfiguration.set(params[:captcha])
         # Set inquiry types
-        params[:inquiry_types] = params[:inquiry_types].split(/,\s*/).map(&:to_sym)
+        params[:inquiry_types] = params[:inquiry_types].split(/,\s*/).map { |type| type.downcase.to_sym }
         Spree::ContactUsConfiguration.set(:inquiry_types => params[:inquiry_types])
 
         respond_to do |format|

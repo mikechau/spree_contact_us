@@ -7,7 +7,7 @@ module Spree::InquiriesHelper
     # end
 
     # Translate types, use string for missing translations
-    types.collect { |i| i.to_s }
+    types.collect { |i| i.to_s.upcase }
 
   end
 end
